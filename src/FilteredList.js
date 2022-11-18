@@ -1,86 +1,98 @@
 import DisplayList from './DisplayList'
 import { useState, useEffect } from 'react';
-import { Checkbox, FormGroup, FormControlLabel } from '@mui/material'
+import { Checkbox, FormGroup, FormControlLabel, Switch } from '@mui/material'
 import FrogCard from './FrogCard'
 
 export default function FilteredList(props) {
-    const [type, setType] = useState("All");
+    const [type, setType] = useState([]);
     const [filteredList, setFilteredList] = useState(props.list);
-
-    // const selectFilterType = eventKey => {
-    //     setType(eventKey);
-    //   };
-
-    const filteredByWeight = props.list.filter((frog) => {
-        return frog.weight > 4.0;
-    })
-
-    const filteredBySize = props.list.filter((frog) => {
-        return frog.size === "Does fit in your palm"
-    })
-
-    const filteredByWeightAndSize = filteredByWeight.filter((frog) => {
-        return frog.size === "Does fit in your palm"
-    })
+    // const [cart, setCart] = useState([]);
+    // const [weight, setWeight] = useState(0);
+    //
+    // const updateWeight = () => {
+    //   let sum = 0;
+    //   cart.forEach(i => sum += i.price);
+    //   setPrice(sum);
+    // }
+    //
+    // useEffect(() => {
+    //   updateWeight();
+    // }, [cart]);
 
     const matchesFilterType = type => {
-      // all items should be shown when no filter is selected
-      if (type === "All") {
-          setFilteredList(props.list);
-        } else if (type === "Weight") {
-          setFilteredList(filteredByWeight);
-        } else if (type === "Size") {
-          setFilteredList(filteredBySize);
-        } else if (type === "WeightSize") {
-          setFilteredList(filteredByWeightAndSize);
-        } else {
-        return false
-      }
-    }
 
-    const handleWeightFilter = () => {
-      console.log(type);
-      if (type === "All") {
-        setType("Weight");
-      } else if (type === "Weight") {
-        setType("All");
-      } else if (type === "Size") {
-        setType("WeightSize");
+      let newList = [...props.list];
+
+      if (type.includes("Weight")) {
+        newList = newList.filter((frog) => {
+          return frog.weight > 4.0;
+        })
       }
 
-      matchesFilterType(type);
-    }
-
-    const handleSizeFilter = () => {
-      if (type === "All") {
-        setType("Size");
-      } else if (type === "Size") {
-        setType("All");
-      } else if (type === "Weight") {
-        setType("WeightSize");
+      if (type.includes("Size")) {
+        newList = newList.filter((frog) => {
+          return frog.size === "Does fit in your palm";
+        })
       }
 
-      matchesFilterType(type);
+      if (type.includes("Alphabetical")) {
+        newList.sort((a, b) => {
+          const nameA = a.name.toLowerCase();
+          const nameB = b.name.toLowerCase();
+          if (nameA < nameB) {
+            return -1;
+          }
+          if (nameA > nameB) {
+            return 1;
+          }
+          return 0;
+        });
+      }
+
+      setFilteredList(newList);
     }
 
-    // useEffect(() => {
-    //   handleFilter();
-    // }, type);
+    const handleFilter = filterName => {
+      // get the current filters
+      let newType = type;
+      // if the box was already checked, remove the filter
+      if (type.includes(filterName)) {
+        newType = type.filter((filt) => {
+          return filt !== filterName;
+        })
+      // if the box was unchecked, add the filter to the array
+      } else {
+        newType.push(filterName);
+      }
+
+      // update the type array
+      setType([...newType]);
+    //  matchesFilterType(type);
+    }
+
+    useEffect(() => {
+      matchesFilterType(type)
+    }, [type])
 
     return (
       <div>
         <FormGroup>
           <FormControlLabel control={<Checkbox
-            onChange={handleWeightFilter} />}
+            onClick={() => handleFilter("Weight")} />}
             label="Large frogs only" />
         </FormGroup>
         <FormGroup>
           <FormControlLabel control={<Checkbox
-            onChange={handleSizeFilter} />}
-            label="Can fit in palm" />
+            onClick={() => handleFilter("Size")} />}
+            label="Fits in palm" />
         </FormGroup>
-        {filteredByWeightAndSize.map(frog =>
-          <FrogCard frog={frog} />
+        <FormGroup>
+          <FormControlLabel control={<Switch
+            onClick={() => handleFilter("Alphabetical")}/>}
+            label="Sort alphabetically" />
+        </FormGroup>
+        {filteredList.map(frog =>
+          <FrogCard className="frog" frog={frog} onClick={props.onClick} party={props.party} />
         )}
       </div>
     )

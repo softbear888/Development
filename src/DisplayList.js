@@ -1,4 +1,5 @@
-import FrogCard from './FrogCard'
+import FrogCard from './FrogCard';
+import Benny from './images/Benny.jpg';
 
 export default function DisplayList(props) {
   return (

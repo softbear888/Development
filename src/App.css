@@ -1,4 +1,18 @@
-.App {
+.left-col {
+  width: 60%;
+  display: inline-block;
+  margin: 2px 3%;
+}
+
+.right-col {
+  width: 30%;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 2px;
+  position: sticky;
+}
+
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +49,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */

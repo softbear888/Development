@@ -2,22 +2,11 @@ import DisplayList from './DisplayList'
 import { useState, useEffect } from 'react';
 import { Checkbox, FormGroup, FormControlLabel, Switch } from '@mui/material'
 import FrogCard from './FrogCard'
+import './App.css'
 
 export default function FilteredList(props) {
     const [type, setType] = useState([]);
     const [filteredList, setFilteredList] = useState(props.list);
-    // const [cart, setCart] = useState([]);
-    // const [weight, setWeight] = useState(0);
-    //
-    // const updateWeight = () => {
-    //   let sum = 0;
-    //   cart.forEach(i => sum += i.price);
-    //   setPrice(sum);
-    // }
-    //
-    // useEffect(() => {
-    //   updateWeight();
-    // }, [cart]);
 
     const matchesFilterType = type => {
 
@@ -92,7 +81,7 @@ export default function FilteredList(props) {
             label="Sort alphabetically" />
         </FormGroup>
         {filteredList.map(frog =>
-          <FrogCard className="frog" frog={frog} onClick={props.onClick} party={props.party} />
+          <FrogCard frog={frog} onClick={props.onClick} party={props.party} />
         )}
       </div>
     )

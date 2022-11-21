@@ -1,13 +1,25 @@
 {
   "files": {
-    "main.css": "/Development/static/css/main.e6c13ad2.css",
-    "main.js": "/Development/static/js/main.7f7cda4f.js",
+    "main.css": "/Development/static/css/main.cf94704e.css",
+    "main.js": "/Development/static/js/main.d2e04dda.js",
+    "static/media/Big Man.png": "/Development/static/media/Big Man.135392117a4ba6e32328.png",
+    "static/media/PS5.jpg": "/Development/static/media/PS5.e4ab923b35dfe5e6d8e3.jpg",
+    "static/media/Benny.jpg": "/Development/static/media/Benny.f358e7460870d1358b9f.jpg",
+    "static/media/Pop Tart.jpg": "/Development/static/media/Pop Tart.e38d5c3716076850ebff.jpg",
+    "static/media/Mochi.jpg": "/Development/static/media/Mochi.a8a2bcae07d2be87d55b.jpg",
+    "static/media/Prince.jpg": "/Development/static/media/Prince.e272616a94d7805c8650.jpg",
+    "static/media/Lily.jpg": "/Development/static/media/Lily.da55101c605ffd6356af.jpg",
+    "static/media/Jasmine.jpg": "/Development/static/media/Jasmine.2ea2140b3fed8581fb78.jpg",
+    "static/media/Frogbert.jpg": "/Development/static/media/Frogbert.f640fa4e80ef5ea3995b.jpg",
+    "static/media/Frog-and-Toad.jpg": "/Development/static/media/Frog-and-Toad.ac69b7a2a2e91a8272d7.jpg",
+    "static/media/Socks.jpg": "/Development/static/media/Socks.1cc258444940dec6f0cf.jpg",
+    "static/media/Gamer.jpg": "/Development/static/media/Gamer.1dfa42ab097f4c184085.jpg",
     "index.html": "/Development/index.html",
-    "main.e6c13ad2.css.map": "/Development/static/css/main.e6c13ad2.css.map",
-    "main.7f7cda4f.js.map": "/Development/static/js/main.7f7cda4f.js.map"
+    "main.cf94704e.css.map": "/Development/static/css/main.cf94704e.css.map",
+    "main.d2e04dda.js.map": "/Development/static/js/main.d2e04dda.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6c13ad2.css",
-    "static/js/main.7f7cda4f.js"
+    "static/css/main.cf94704e.css",
+    "static/js/main.d2e04dda.js"
   ]
 }

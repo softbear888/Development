@@ -23,7 +23,7 @@ import Mochi from './images/Mochi.jpg'
 function App() {
   const [party, setParty] = useState([]);
   const [weight, setWeight] = useState(0);
-  //const [price, setPrice] = useState(0);
+  //const [list, setList] = useState([]);
 
   const frogList = [
     { name: "Benny", weight: 5.8, size: "Does not fit in your palm", src: Benny, description: "That's a frog alright! A rather average one at that, but still full of love." },

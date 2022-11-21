@@ -17,7 +17,10 @@ export default function FrogCard(props) {
       <h5>{frog.weight} lbs</h5>
       <h5>{frog.size}</h5>
       <p>{frog.description}</p>
-      <Button variant="contained" onClick={addFrogToParty}>Add to Party</Button>
+      {party.includes(frog) ?
+        <Button variant="contained" disabled onClick={addFrogToParty}>Added to Party</Button> :
+        <Button variant="contained" onClick={addFrogToParty}>Add to Party</Button>
+      }
     </div>
   );
 }

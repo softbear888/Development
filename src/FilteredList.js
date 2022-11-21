@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { Checkbox, FormGroup, FormControlLabel, Switch } from '@mui/material'
 import FrogCard from './FrogCard'
 import './App.css'
+import { Button } from '@mui/material';
 
 export default function FilteredList(props) {
     const [type, setType] = useState([]);

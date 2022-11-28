@@ -1,5 +1,4 @@
-import { Button, ListItemButton, ListItemText, List } from '@mui/material';
-import Benny from './images/Benny.jpg';
+import { Button } from '@mui/material';
 
 export default function FrogCard(props) {
   const frog = props.frog;

@@ -1,16 +1,13 @@
-import DisplayList from './DisplayList'
 import { useState, useEffect } from 'react';
 import { Checkbox, FormGroup, FormControlLabel, Switch } from '@mui/material'
 import FrogCard from './FrogCard'
 import './App.css'
-import { Button } from '@mui/material';
 
 export default function FilteredList(props) {
     const [type, setType] = useState([]);
     const [filteredList, setFilteredList] = useState(props.list);
 
     const matchesFilterType = type => {
-
       let newList = [...props.list];
 
       if (type.includes("Weight")) {
@@ -57,7 +54,6 @@ export default function FilteredList(props) {
 
       // update the type array
       setType([...newType]);
-    //  matchesFilterType(type);
     }
 
     useEffect(() => {
@@ -69,7 +65,7 @@ export default function FilteredList(props) {
         <FormGroup>
           <FormControlLabel control={<Checkbox
             onClick={() => handleFilter("Weight")} />}
-            label="Large frogs only" />
+            label="Large frogs only (more than 4 lbs)" />
         </FormGroup>
         <FormGroup>
           <FormControlLabel control={<Checkbox

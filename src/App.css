@@ -13,6 +13,8 @@ body {
   display: inline-block;
   vertical-align: top;
   margin-top: 2px;
+  position: sticky;
+  top: 2px;
 }
 
 .frog-div {
@@ -23,7 +25,6 @@ body {
   margin-right: 50px;
   vertical-align: top;
 }
-
 /* .App {
   text-align: center;
 }

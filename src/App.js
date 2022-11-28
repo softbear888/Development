@@ -2,10 +2,6 @@
 import './App.css';
 import { useState, useEffect } from 'react';
 import FilteredList from './FilteredList';
-import DisplayList from './DisplayList';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Button } from '@mui/material';
 import Benny from './images/Benny.jpg';
 import Frogbert from './images/Frogbert.jpg'
@@ -23,7 +19,6 @@ import Mochi from './images/Mochi.jpg'
 function App() {
   const [party, setParty] = useState([]);
   const [weight, setWeight] = useState(0);
-  //const [list, setList] = useState([]);
 
   const frogList = [
     { name: "Benny", weight: 5.8, size: "Does not fit in your palm", src: Benny, description: "That's a frog alright! A rather average one at that, but still full of love." },
@@ -47,7 +42,7 @@ function App() {
   const updateWeight = () => {
     let sum = 0;
     party.forEach(i => Number(sum += i.weight));
-    setWeight(sum);
+    setWeight(sum.toFixed(1));
   }
 
   useEffect(() => {
@@ -61,17 +56,15 @@ function App() {
         <p>You've come a long way. You must be tired, maybe even lonely traveling all this way on your own. Please take a companion &#40;or two, or three, or more&#41; to accompany you on the rest of your journey! While you add your amphibian friends to your party, though, check the weight total to the right to make sure that you've got enough strength to carry them all.</p>
         <FilteredList list={frogList} onClick={setParty} party={party}/>
       </div>
-      <div className="right-col">
-        <div>
-        <h1>Party</h1>
-        {party.map(e =>
-          <div>
-            <p>{e.name}</p>
-            <Button variant="contained" onClick={()=>removeFrog(e.name)}>Remove</Button>
-          </div>
-        )}
-        </div>
-        <p>Total Weight: {weight}</p>
+      <div className="right-col sticky">
+          <h1>Party</h1>
+          {party.map(e =>
+            <div>
+              <p>{e.name}</p>
+              <Button variant="contained" onClick={()=>removeFrog(e.name)}>Remove</Button>
+            </div>
+          )}
+          <p>Total Weight: {weight} lbs</p>
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Development/static/css/main.cf94704e.css",
-    "main.js": "/Development/static/js/main.f1eac85b.js",
+    "main.css": "/Development/static/css/main.f54deb19.css",
+    "main.js": "/Development/static/js/main.50617cb9.js",
     "static/media/Big Man.png": "/Development/static/media/Big Man.135392117a4ba6e32328.png",
     "static/media/PS5.jpg": "/Development/static/media/PS5.e4ab923b35dfe5e6d8e3.jpg",
     "static/media/Benny.jpg": "/Development/static/media/Benny.f358e7460870d1358b9f.jpg",
@@ -15,11 +15,11 @@
     "static/media/Socks.jpg": "/Development/static/media/Socks.1cc258444940dec6f0cf.jpg",
     "static/media/Gamer.jpg": "/Development/static/media/Gamer.1dfa42ab097f4c184085.jpg",
     "index.html": "/Development/index.html",
-    "main.cf94704e.css.map": "/Development/static/css/main.cf94704e.css.map",
-    "main.f1eac85b.js.map": "/Development/static/js/main.f1eac85b.js.map"
+    "main.f54deb19.css.map": "/Development/static/css/main.f54deb19.css.map",
+    "main.50617cb9.js.map": "/Development/static/js/main.50617cb9.js.map"
   },
   "entrypoints": [
-    "static/css/main.cf94704e.css",
-    "static/js/main.f1eac85b.js"
+    "static/css/main.f54deb19.css",
+    "static/js/main.50617cb9.js"
   ]
 }

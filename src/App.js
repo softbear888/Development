@@ -1,8 +1,7 @@
-// import logo from './logo.svg';
 import './App.css';
 import { useState, useEffect } from 'react';
 import FilteredList from './FilteredList';
-import { Button } from '@mui/material';
+import Aggregator from './Aggregator';
 import Benny from './images/Benny.jpg';
 import Frogbert from './images/Frogbert.jpg'
 import FrogAndToad from './images/Frog-and-Toad.jpg'
@@ -35,10 +34,6 @@ function App() {
     { name: "Play Station 5", weight: 4.6, size: "Does not fit in your palm", src: PS5, description: "A luxury only few can afford." }
   ]
 
-  const removeFrog = name => {
-    setParty(party.filter((frog) => name !== frog.name));
-  };
-
   const updateWeight = () => {
     let sum = 0;
     party.forEach(i => Number(sum += i.weight));
@@ -57,14 +52,7 @@ function App() {
         <FilteredList list={frogList} onClick={setParty} party={party}/>
       </div>
       <div className="right-col sticky">
-          <h1>Party</h1>
-          {party.map(e =>
-            <div>
-              <p>{e.name}</p>
-              <Button variant="contained" onClick={()=>removeFrog(e.name)}>Remove</Button>
-            </div>
-          )}
-          <p>Total Weight: {weight} lbs</p>
+          <Aggregator party={party} setParty={setParty} weight={weight}/>
       </div>
     </div>
   );

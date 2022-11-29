@@ -9,6 +9,8 @@ export default function FrogCard(props) {
     addToParty([...party, frog]);
   }
 
+  console.log([...party]);
+
   return (
     <div className = "frog-div">
       <img src={frog.src} alt="Alt text"/>
@@ -16,7 +18,7 @@ export default function FrogCard(props) {
       <h5>{frog.weight} lbs</h5>
       <h5>{frog.size}</h5>
       <p>{frog.description}</p>
-      {party.includes(frog) ?
+      {party.some(e => e.name === frog.name) ?
         <Button variant="contained" disabled onClick={addFrogToParty}>Added to Party</Button> :
         <Button variant="contained" onClick={addFrogToParty}>Add to Party</Button>
       }

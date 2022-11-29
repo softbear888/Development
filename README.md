@@ -1,7 +1,7 @@
 # Development
 
 ### Link to Deployed Website
-https://softbear888.github.io/Development/
+https://softbear888.github.io/Development-Final/
 
 ### Goal and Value of the Application
 The application is a silly adventuring party builder, except everyone in the party (besides you) is a frog. It doesn't serve a very practical purpose; it's just here to spark a bit of joy. Perhaps it could be used in a video game where you play as little frog characters!
